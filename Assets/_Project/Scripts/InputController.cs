@@ -6,21 +6,21 @@ using UnityEngine.InputSystem;
 public class InputController : MonoBehaviour
 {
     public Vector2 Move { get; private set; }
-    public float Sprint { get; private set; }
-    public float Interact { get; private set; }
+    public bool Jump { get; private set; }
+    public bool FlipWorld { get; private set; }
 
-    public void OnMove(InputValue value)
+    public void OnMove(InputAction.CallbackContext context)
     {
-        Move = value.Get<Vector2>();
+        Move = context.ReadValue<Vector2>();
     }
 
-    public void OnSprint(InputValue value)
+    public void OnJump(InputAction.CallbackContext context)
     {
-        Sprint = value.Get<float>();
+        Jump = context.ReadValueAsButton();
     }
-
-    public void OnInteract(InputValue value)
+    
+    public void OnFlipWorld(InputAction.CallbackContext context)
     {
-        Interact = value.Get<float>();
+        FlipWorld = context.ReadValueAsButton();
     }
 }

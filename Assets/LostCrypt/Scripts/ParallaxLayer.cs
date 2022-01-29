@@ -4,6 +4,7 @@ public class ParallaxLayer : MonoBehaviour
 {
     [SerializeField] float multiplier = 0.0f;
     [SerializeField] bool horizontalOnly = true;
+    [SerializeField] bool worldFlipped = false;
 
     private Transform cameraTransform;
 
@@ -21,10 +22,22 @@ public class ParallaxLayer : MonoBehaviour
     private void LateUpdate()
     {
         var position = startPos;
-        if (horizontalOnly)
-            position.x += multiplier * (cameraTransform.position.x - startCameraPos.x);
+
+        if (worldFlipped)
+        {
+            if (horizontalOnly)
+                position.x += multiplier * (cameraTransform.position.x - startCameraPos.x);
+            else
+                position += multiplier * (cameraTransform.position - startCameraPos);
+        }
         else
-            position += multiplier * (cameraTransform.position - startCameraPos);
+        {
+            if (horizontalOnly)
+                position.x += multiplier * (cameraTransform.position.x - startCameraPos.x);
+            else
+                position += multiplier * (cameraTransform.position - startCameraPos);
+        }
+        
 
         transform.position = position;
     }

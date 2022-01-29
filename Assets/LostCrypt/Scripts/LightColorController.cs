@@ -26,14 +26,14 @@ public class LightColorController : MonoBehaviour
 
     private void OnEnable()
     {
-        time = 0;
+        //time = 0;
         GetSetters();
         UpdateSetters();
     }
 
     private void OnDisable()
     {
-        time = 0;
+        //time = 0;
         UpdateSetters();
     }
 

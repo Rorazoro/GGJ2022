@@ -510,6 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
   m_Name: CinemachineShot(Clone)(Clone)
   m_EditorClassIdentifier: 
+  DisplayName: 
   VirtualCamera:
     exposedName: f91b70916e4eec448ac84944558d0e5b
     defaultValue: {fileID: 0}
@@ -860,6 +861,7 @@ MonoBehaviour:
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
+    m_ScenePreview: 1
   m_DurationMode: 0
   m_MarkerTrack: {fileID: 1561267878323480901}
 --- !u!74 &1343228872029019690
