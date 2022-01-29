@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Material_Vegetation_Wind_2_Lit
-  m_Shader: {fileID: -6465566751694194690, guid: 408da5ee58f729347a6e0edbd03bee89,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 408da5ee58f729347a6e0edbd03bee89, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
