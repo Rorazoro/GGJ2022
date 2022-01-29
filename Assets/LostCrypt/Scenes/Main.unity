@@ -2892,15 +2892,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358132, guid: 6cfaadcb953af1c448a1b82b94f47442, type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.493996
+      value: -47.448895
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.740002
+      value: -29.560001
       objectReference: {fileID: 0}
     - target: {fileID: 4401863855019763839, guid: 6cfaadcb953af1c448a1b82b94f47442, type: 3}
       propertyPath: m_ScreenY
@@ -6516,6 +6516,7 @@ MonoBehaviour:
   fallGravityScale: 2.5
   groundedGravityScale: 1
   resetSpeedOnLand: 0
+  isFlipped: 0
 --- !u!114 &1158516577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6820,6 +6821,10 @@ PrefabInstance:
     - target: {fileID: 3068243760881506265, guid: 3dba92a9cfa822943a3e83afcb632d30, type: 3}
       propertyPath: m_Name
       value: Environment_Foreground_Far
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068243760881506265, guid: 3dba92a9cfa822943a3e83afcb632d30, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3068243760881506270, guid: 3dba92a9cfa822943a3e83afcb632d30, type: 3}
       propertyPath: m_RootOrder
@@ -14765,7 +14770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570174568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1778990679}
@@ -14775,7 +14780,7 @@ Transform:
   - {fileID: 927382651}
   - {fileID: 1565046920}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1581232797
 GameObject:
@@ -14801,7 +14806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581232797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.864973, y: -2.145679, z: -20.280027}
+  m_LocalPosition: {x: -24.864973, y: -1, z: -20.280027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 114669748}
@@ -14811,7 +14816,7 @@ Transform:
   - {fileID: 428872883}
   - {fileID: 2064122343}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1581718947
 PrefabInstance:
@@ -22152,7 +22157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647290844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 50, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -22171,19 +22176,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightObjects:
+  - {fileID: 6070442860509131934}
+  - {fileID: 1565046919}
   - {fileID: 199578464}
   - {fileID: 1158516575}
-  - {fileID: 1778990678}
-  - {fileID: 6070442860509131934}
   - {fileID: 845084644}
-  - {fileID: 1565046919}
+  - {fileID: 1778990678}
   DarkObjects:
+  - {fileID: 114669747}
+  - {fileID: 2064122342}
   - {fileID: 269497758}
   - {fileID: 1698603606}
-  - {fileID: 1220524407}
-  - {fileID: 114669747}
   - {fileID: 428872884}
-  - {fileID: 2064122342}
+  - {fileID: 1220524407}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 768
   IsWorldFlipped: 0
 --- !u!43 &1666075635
 Mesh:
@@ -23580,6 +23588,7 @@ MonoBehaviour:
   fallGravityScale: -2.5
   groundedGravityScale: -1
   resetSpeedOnLand: 0
+  isFlipped: 0
 --- !u!4 &1698603621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2638879086307866349, guid: 8536eef0a5c281642b45c61fc2f8e7e6, type: 3}
@@ -26654,6 +26663,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment_Foreground_Far
       objectReference: {fileID: 0}
+    - target: {fileID: 3068243760881506265, guid: 3dba92a9cfa822943a3e83afcb632d30, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3068243760881506270, guid: 3dba92a9cfa822943a3e83afcb632d30, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -27056,11 +27069,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.493996
+      value: -36.07875
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.740002
+      value: 5.7400036
       objectReference: {fileID: 0}
     - target: {fileID: 4401863855381985666, guid: 6cfaadcb953af1c448a1b82b94f47442, type: 3}
       propertyPath: m_RootOrder
@@ -27324,6 +27337,18 @@ PrefabInstance:
     - target: {fileID: 5162504458256914561, guid: cf105c35f94aaa9439582c5463ed295f, type: 3}
       propertyPath: m_Name
       value: Environment_Middle_Crypt
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285664936240075978, guid: cf105c35f94aaa9439582c5463ed295f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793339601507922305, guid: cf105c35f94aaa9439582c5463ed295f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438793728713137767, guid: cf105c35f94aaa9439582c5463ed295f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf105c35f94aaa9439582c5463ed295f, type: 3}
@@ -28686,6 +28711,10 @@ PrefabInstance:
     - target: {fileID: 7928108575857609536, guid: ab344dd8a01df6e439256d02ea36b5ec, type: 3}
       propertyPath: m_Name
       value: Environment_Foreground_Near
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928108575857609536, guid: ab344dd8a01df6e439256d02ea36b5ec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7928108575857609537, guid: ab344dd8a01df6e439256d02ea36b5ec, type: 3}
       propertyPath: m_RootOrder
