@@ -48,7 +48,7 @@ namespace _Project.Scripts
 
         private Vector2 prevVelocity;
         private GroundType groundType;
-        public bool isFlipped;
+        private bool isFlipped;
         private bool isJumping;
         private bool isFalling;
 
@@ -125,7 +125,7 @@ namespace _Project.Scripts
             prevVelocity = controllerRigidbody.velocity;
         }
         
-        private void UpdateWorld()
+        public void UpdateWorld()
         {
             if (flipInput)
             {
@@ -223,11 +223,13 @@ namespace _Project.Scripts
             // Use scale to flip character depending on direction
             if (controllerRigidbody.velocity.x > minFlipSpeed && isFlipped)
             {
-                FlipDirection(false);
+                isFlipped = false;
+                puppet.localScale = Vector3.one;
             }
             else if (controllerRigidbody.velocity.x < -minFlipSpeed && !isFlipped)
             {
-                FlipDirection(true);
+                isFlipped = true;
+                puppet.localScale = flippedScale;
             }
         }
 
@@ -258,12 +260,6 @@ namespace _Project.Scripts
             controllerRigidbody.gravityScale = gravityScale;
         }
 
-        public void FlipDirection(bool flip)
-        {
-            isFlipped = flip;
-            puppet.localScale = flip ? flippedScale : Vector3.one;
-        }
-        
         public void GrabItem(Transform item)
         {
             // Attach item to hand
