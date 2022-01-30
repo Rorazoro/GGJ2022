@@ -43,8 +43,8 @@ Material:
     - Vector1_C703B391: 1
     - Vector1_D412CFB2: 0.55
     m_Colors:
-    - ColorBloom: {r: 1.1486983, g: 1.1486983, b: 1.1486983, a: 1}
+    - ColorBloom: {r: 1, g: 1, b: 1, a: 0}
     - Color_5B866001: {r: 4, g: 4, b: 4, a: 0}
     - Color_926009DC: {r: 0.9811321, g: 0, b: 0, a: 1}
-    - _SourcePosition: {r: 23.072, g: -5.031, b: 0, a: 0}
+    - _SourcePosition: {r: 23.072, g: -4.031, b: 0, a: 0}
   m_BuildTextureStacks: []
