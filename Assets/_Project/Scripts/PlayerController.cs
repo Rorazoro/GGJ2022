@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.U2D.Animation;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 
 namespace _Project.Scripts
 {
@@ -11,12 +12,16 @@ namespace _Project.Scripts
     public class PlayerController : MonoBehaviour
     {
         readonly Vector3 flippedScale = new Vector3(-1, 1, 1);
+        readonly Vector3 flippedScale_shadow = new Vector3(-1, -1, 1);
         readonly Quaternion flippedRotation = new Quaternion(0, 0, 1, 0);
 
         [Header("Character")]
         [SerializeField] Animator animator = null;
+        [SerializeField] Animator animator_shadow = null;
         [SerializeField] Transform puppet = null;
+        [SerializeField] Transform puppet_shadow = null;
         [SerializeField] CharacterAudio audioPlayer = null;
+        [SerializeField] private PlayableDirector FlipFX;
 
         [Header("Tail")]
         [SerializeField] Transform tailAnchor = null;
@@ -129,7 +134,8 @@ namespace _Project.Scripts
         {
             if (flipInput)
             {
-                WorldFlipManager.Instance.FlipWorld();
+                FlipFX.Play();
+                //WorldFlipManager.Instance.FlipWorld();
 
                 flipInput = false;
             }
@@ -147,6 +153,7 @@ namespace _Project.Scripts
 
             // Update animator
             animator.SetBool(animatorGroundedBool, groundType != GroundType.None);
+            animator_shadow.SetBool(animatorGroundedBool, groundType != GroundType.None);
         }
 
         private void UpdateVelocity()
@@ -169,6 +176,7 @@ namespace _Project.Scripts
             // Update animator running speed
             var horizontalSpeedNormalized = Mathf.Abs(velocity.x) / maxSpeed;
             animator.SetFloat(animatorRunningSpeed, horizontalSpeedNormalized);
+            animator_shadow.SetFloat(animatorRunningSpeed, horizontalSpeedNormalized);
 
             // Play audio
             audioPlayer.PlaySteps(groundType, horizontalSpeedNormalized);
@@ -188,6 +196,7 @@ namespace _Project.Scripts
 
                 // Set animator
                 animator.SetTrigger(animatorJumpTrigger);
+                animator_shadow.SetTrigger(animatorJumpTrigger);
 
                 // We've consumed the jump, reset it.
                 jumpInput = false;
@@ -262,8 +271,9 @@ namespace _Project.Scripts
         {
             isFlipped = flip;
             puppet.localScale = flip ? flippedScale : Vector3.one;
+            puppet_shadow.localScale = flip ? flippedScale_shadow : new Vector3(1, -1, 1);
         }
-        
+
         public void GrabItem(Transform item)
         {
             // Attach item to hand
