@@ -116305,10 +116305,6 @@ PrefabInstance:
       value: Sara-Light
       objectReference: {fileID: 0}
     - target: {fileID: 2613617673525120655, guid: c876ff49cbddce64bbba87a297200b20, type: 3}
-      propertyPath: jumpForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2613617673525120655, guid: c876ff49cbddce64bbba87a297200b20, type: 3}
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 432623615}
@@ -117415,7 +117411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.015293
+      value: -44.639603
       objectReference: {fileID: 0}
     - target: {fileID: 4401863854545358135, guid: 6cfaadcb953af1c448a1b82b94f47442, type: 3}
       propertyPath: m_LocalPosition.y
