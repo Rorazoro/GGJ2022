@@ -46,5 +46,5 @@ Material:
     - ColorBloom: {r: 1, g: 1, b: 1, a: 0}
     - Color_5B866001: {r: 4, g: 4, b: 4, a: 0}
     - Color_926009DC: {r: 0.9811321, g: 0, b: 0, a: 1}
-    - _SourcePosition: {r: 4.7960186, g: -21.386137, b: 0, a: 0}
+    - _SourcePosition: {r: -32.139706, g: -25.236109, b: 0, a: 0}
   m_BuildTextureStacks: []
