@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace _Project.Scripts
@@ -9,14 +10,31 @@ namespace _Project.Scripts
         [SerializeField] private GameObject[] DarkObjects;
 
         [SerializeField] private LayerMask groundLayerMask;
+        [SerializeField] private float playerYAnchor;
 
         public bool IsWorldFlipped;
+
+        private void Start()
+        {
+            CalculatePlayerYAnchor();
+        }
+
+        private void CalculatePlayerYAnchor()
+        {
+            GameObject lightPlayer = LightObjects.Single(x => x.CompareTag("Player"));
+            GameObject darkPlayer = DarkObjects.Single(x => x.CompareTag("Player"));
+            
+            float lightY = lightPlayer.transform.position.y;
+            float darkY = darkPlayer.transform.position.y;
+            
+            playerYAnchor = lightY + (darkY - lightY) / 2;
+        }
 
         public void FlipWorld()
         {
             IsWorldFlipped = !IsWorldFlipped;
 
-            float savedPlayerX = 0f;
+            Vector2 previousPlayerPosition = new Vector2();
             bool savedPlayerFlip = false;
 
             if (IsWorldFlipped)
@@ -25,7 +43,7 @@ namespace _Project.Scripts
                 {
                     if (obj.CompareTag("Player"))
                     {
-                        savedPlayerX = obj.transform.position.x;
+                        previousPlayerPosition = obj.transform.position;
                         savedPlayerFlip = obj.GetComponent<PlayerController>().isFlipped;
                     }
 
@@ -37,19 +55,24 @@ namespace _Project.Scripts
                     obj.SetActive(true);
                     if (obj.CompareTag("Player"))
                     {
-                        RaycastHit2D hit = Physics2D.Raycast(new Vector2(savedPlayerX, -100), Vector2.up, 200,
-                            groundLayerMask);
+                        // RaycastHit2D hit = Physics2D.Raycast(new Vector2(savedPlayerX, -100), Vector2.up, 200,
+                        //     groundLayerMask);
+                        //
+                        // if (hit.collider != null)
+                        // {
+                        //     Debug.Log($"Raycast hit: {hit.collider.gameObject.name}");
+                        // }
+                        // else
+                        // {
+                        //     Debug.Log($"Raycast hit not found!");
+                        // }
 
-                        if (hit.collider != null)
-                        {
-                            Debug.Log($"Raycast hit: {hit.collider.gameObject.name}");
-                        }
-                        else
-                        {
-                            Debug.Log($"Raycast hit not found!");
-                        }
-
-                        obj.transform.position = new Vector3(savedPlayerX, hit.point.y);
+                        Vector2 anchorPosition = new Vector2(previousPlayerPosition.x, playerYAnchor);
+                        Vector2 newPosition;
+                        newPosition.x = previousPlayerPosition.x;
+                        newPosition.y = playerYAnchor - Vector2.Distance(anchorPosition, previousPlayerPosition);
+                        obj.transform.position = newPosition;
+                        
                         obj.GetComponent<PlayerController>().FlipDirection(savedPlayerFlip);
                     }
                 }
@@ -60,7 +83,7 @@ namespace _Project.Scripts
                 {
                     if (obj.CompareTag("Player"))
                     {
-                        savedPlayerX = obj.transform.position.x;
+                        previousPlayerPosition = obj.transform.position;
                         savedPlayerFlip = obj.GetComponent<PlayerController>().isFlipped;
                     }
 
@@ -72,19 +95,24 @@ namespace _Project.Scripts
                     obj.SetActive(true);
                     if (obj.CompareTag("Player"))
                     {
-                        RaycastHit2D hit = Physics2D.Raycast(new Vector2(savedPlayerX, 100), Vector2.down, 200,
-                            groundLayerMask);
-                        
-                        if (hit.collider != null)
-                        {
-                            Debug.Log($"Raycast hit: {hit.collider.gameObject.name}");
-                        }
-                        else
-                        {
-                            Debug.Log($"Raycast hit not found!");
-                        }
+                        // RaycastHit2D hit = Physics2D.Raycast(new Vector2(savedPlayerX, 100), Vector2.down, 200,
+                        //     groundLayerMask);
+                        //
+                        // if (hit.collider != null)
+                        // {
+                        //     Debug.Log($"Raycast hit: {hit.collider.gameObject.name}");
+                        // }
+                        // else
+                        // {
+                        //     Debug.Log($"Raycast hit not found!");
+                        // }
 
-                        obj.transform.position = new Vector3(savedPlayerX, hit.point.y);
+                        Vector2 anchorPosition = new Vector2(previousPlayerPosition.x, playerYAnchor);
+                        Vector2 newPosition;
+                        newPosition.x = previousPlayerPosition.x;
+                        newPosition.y = playerYAnchor + Vector2.Distance(anchorPosition, previousPlayerPosition);
+                        obj.transform.position = newPosition;
+                        
                         obj.GetComponent<PlayerController>().FlipDirection(savedPlayerFlip);
                     }
                 }
