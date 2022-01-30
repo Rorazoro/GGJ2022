@@ -2324,7 +2324,7 @@ MonoBehaviour:
   spriteLibrary: {fileID: 1890254636534110911}
   acceleration: 30
   maxSpeed: 4
-  jumpForce: 8
+  jumpForce: 10
   minFlipSpeed: 0.1
   jumpGravityScale: 1
   fallGravityScale: 2.5
