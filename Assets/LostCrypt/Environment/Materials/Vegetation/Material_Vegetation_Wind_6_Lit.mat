@@ -50,6 +50,6 @@ Material:
     - Vector1_7AA64B76: 0
     m_Colors:
     - Color_3C5F263D: {r: 1, g: 0.8718326, b: 0.33490568, a: 1}
-    - RimColor: {r: 0.6415094, g: 0.5047918, b: 0.20274118, a: 1}
+    - RimColor: {r: 0.5773852, g: 0.7075472, b: 0.6668716, a: 1}
     - Vector2_AB971143: {r: 2, g: -0.2, b: 0, a: 0}
   m_BuildTextureStacks: []
