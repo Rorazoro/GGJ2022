@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LostCrypt/Scenes/Main.unity
-    guid: a2b58d8c2e473104380da39b8eb2a7e5
+    path: Assets/_Project/Scenes/Main.unity
+    guid: 8da551f312b24ca469764825f22a826e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 681d7631b4f51ba4487d471d08562f1f, type: 2}
