@@ -17,6 +17,10 @@ namespace _Project.Scripts
         private void Start()
         {
             CalculatePlayerYAnchor();
+            foreach (var obj in DarkObjects)
+            {
+                obj.SetActive(false);
+            }
         }
 
         private void CalculatePlayerYAnchor()
@@ -55,18 +59,6 @@ namespace _Project.Scripts
                     obj.SetActive(true);
                     if (obj.CompareTag("Player"))
                     {
-                        // RaycastHit2D hit = Physics2D.Raycast(new Vector2(savedPlayerX, -100), Vector2.up, 200,
-                        //     groundLayerMask);
-                        //
-                        // if (hit.collider != null)
-                        // {
-                        //     Debug.Log($"Raycast hit: {hit.collider.gameObject.name}");
-                        // }
-                        // else
-                        // {
-                        //     Debug.Log($"Raycast hit not found!");
-                        // }
-
                         Vector2 anchorPosition = new Vector2(previousPlayerPosition.x, playerYAnchor);
                         Vector2 newPosition;
                         newPosition.x = previousPlayerPosition.x;
@@ -95,18 +87,6 @@ namespace _Project.Scripts
                     obj.SetActive(true);
                     if (obj.CompareTag("Player"))
                     {
-                        // RaycastHit2D hit = Physics2D.Raycast(new Vector2(savedPlayerX, 100), Vector2.down, 200,
-                        //     groundLayerMask);
-                        //
-                        // if (hit.collider != null)
-                        // {
-                        //     Debug.Log($"Raycast hit: {hit.collider.gameObject.name}");
-                        // }
-                        // else
-                        // {
-                        //     Debug.Log($"Raycast hit not found!");
-                        // }
-
                         Vector2 anchorPosition = new Vector2(previousPlayerPosition.x, playerYAnchor);
                         Vector2 newPosition;
                         newPosition.x = previousPlayerPosition.x;
