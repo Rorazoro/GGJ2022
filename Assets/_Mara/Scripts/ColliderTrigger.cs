@@ -19,6 +19,12 @@ public class ColliderTrigger : MonoBehaviour
 
         }
 
+        if(collision.gameObject.tag == "Alter") { 
+            
+            Application.LoadLevel("level_1");
+
+        }
+
     }
 
     private void  OnTriggerExit2D(Collider2D collision)
