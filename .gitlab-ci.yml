@@ -1,7 +1,7 @@
 pages:
   stage: deploy
   script:
-  - mv .public public
+  - mv ./Builds/WebGL public
   artifacts:
     paths:
     - public
