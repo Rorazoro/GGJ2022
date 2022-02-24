@@ -6,5 +6,7 @@ pages:
     paths:
     - public
   only:
-  - main
-  when: manual
+    refs:
+      - main
+    changes:
+      - Builds/WebGL/**/*
