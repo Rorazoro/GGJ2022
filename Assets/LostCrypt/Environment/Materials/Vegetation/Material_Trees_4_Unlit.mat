@@ -38,7 +38,7 @@ Material:
     m_Floats: []
     m_Colors:
     - Color_353D90DF: {r: 0, g: 0, b: 0, a: 0}
-    - _FogColor: {r: 0.20392157, g: 0.2300737, b: 0.3019608, a: 0.8784314}
+    - _FogColor: {r: 0.3234247, g: 0.61920244, b: 0.8679245, a: 0.43137255}
     - _TimeOfDay: {r: 1, g: 1, b: 1, a: 0}
-    - _TintColor: {r: 0.48246706, g: 0.53755003, b: 0.735849, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

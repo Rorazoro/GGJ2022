@@ -19638,6 +19638,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cameras-Dark
       objectReference: {fileID: 0}
+    - target: {fileID: 3263015568895296342, guid: 9fc727699c02ec4448265698951c85c4, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263015568895296342, guid: 9fc727699c02ec4448265698951c85c4, type: 3}
+      propertyPath: orthographic size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3263015569791723202, guid: 9fc727699c02ec4448265698951c85c4, type: 3}
       propertyPath: m_Follow
       value: 
@@ -19646,6 +19654,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 2638879086929827000}
+    - target: {fileID: 3263015569847154358, guid: 9fc727699c02ec4448265698951c85c4, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fc727699c02ec4448265698951c85c4, type: 3}
 --- !u!4 &1423493508675909238
@@ -22030,13 +22042,29 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 2638879085623822997}
+    - target: {fileID: 5457113902908193321, guid: accb7c54fa4b7b347a8743c8846c2c59, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457113902908193322, guid: accb7c54fa4b7b347a8743c8846c2c59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3400002
+      objectReference: {fileID: 0}
     - target: {fileID: 5457113903936825949, guid: accb7c54fa4b7b347a8743c8846c2c59, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 2638879085623822997}
+    - target: {fileID: 5457113904094908361, guid: accb7c54fa4b7b347a8743c8846c2c59, type: 3}
+      propertyPath: orthographic size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5457113904094908362, guid: accb7c54fa4b7b347a8743c8846c2c59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.083244
+      value: -45.194355
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457113904094908362, guid: accb7c54fa4b7b347a8743c8846c2c59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3400025
       objectReference: {fileID: 0}
     - target: {fileID: 5457113904860527486, guid: accb7c54fa4b7b347a8743c8846c2c59, type: 3}
       propertyPath: m_Name
